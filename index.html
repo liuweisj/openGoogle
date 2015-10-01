@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+    <meta name="description" content="multiMirror Google Search Engine without 翻墙">
+    <!-- favor icon -->
+    <link rel="manifest" href="./images/fav/manifest.json">
+    <link href="./favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="theme-color" content="#ffffff">
+
+    <title>Google multiMirror</title>
+    <script type="text/javascript" src="./scripts/angular.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./style.css"/>
+</head>
+
+<body ng-app="goApp">
+<!--<header>
+    <div></div>
+    <div></div>
+    <div></div>
+</header>-->
+
+<main class="container" ng-controller="MainCtrl">
+    <div class="logo">Fuck 方滨兴<br>Version 1.1</div>
+    <div class="search">
+        <input type="text" tabindex="1" autofocus="autofocus" enter="search()" ng-model="key" placeholder=""/>
+        <input type="button" ng-click="search()" value="Google Search" ng-disabled="!google.connected" />
+    </div>
+
+    <div class="status">
+        <div class="title {{hostFound?'connected':'connecting'}}">
+            <span ng-click="toggleDetail()">{{hostFound ? "&#8766; Connection established" : "&#8987;&nbsp;Connecting to Google..."}}</span>
+            <span class="reset" ng-click="reset()">&#8634;&nbsp;reset</span>
+        </div>
+        <ul class="detail {{showDetail?'show':'hide'}}">
+            <li ng-repeat="mirror in mirrors | orderBy:'timecost'" class="{{mirror.status}}">
+                <span><a href="http://{{mirror.host}}" target="_blank">{{mirror.host}}</a></span>
+                <span>{{ mirror.timecost ? mirror.timecost+"ms" : mirror.status}}</span>
+                <image ng-src="{{mirror.testUrl}}" image-load="{{mirror.host}}"></image>
+            </li>
+        </ul>
+    </div>
+</main>
+<footer>
+    <a target="_blank" href="LICENSE">
+        &#169; 2015 &nbsp;  <a target="_blank" href="http://unblock.github.io/google">unblock Google</a>
+    <!--<a target="_blank" href="https://github.com/unblock/google">&#10084; GitHub</a>-->
+    <a target="_blank" href="https://github.com/akar1nchan/openGoogle">&#10084; GitHub</a>
+</footer>
+
+<script src="./scripts/app.js"></script>
+</body>
+</html>

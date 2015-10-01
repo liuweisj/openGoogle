@@ -1,2 +1,1 @@
-# openGoogle
-multiMirror Google Search Engine without fanqiang
+# BASED ON [UNBLOCK GOOGLE](https://github.com/unblock/google)

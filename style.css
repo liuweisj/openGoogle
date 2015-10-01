@@ -1,0 +1,207 @@
+* {
+  box-sizing: border-box
+}
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0
+}
+header {
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex
+}
+header div {
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  border-top: 4px solid
+}
+header div:first-child {
+  border-top-color: red
+}
+header div:nth-of-type(2) {
+  border-top-color: green
+}
+header div:last-child {
+  border-top-color: yellow
+}
+.container {
+  margin: 0 auto;
+  max-width: 500px;
+  text-align: center;
+  padding-bottom: 4em
+}
+.container .logo {
+  color: white;
+  min-height: 280px;
+  height: 20%;
+  background: transparent url(./google.png) no-repeat;
+  background-position: center center;
+  background-size: contain
+}
+@media screen and (max-width: 640px) {
+  .container .logo {
+    background: none;
+    font-size: 3em;
+    font-weight: bold;
+    min-height: 2em
+  }
+}
+.container .search {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex
+}
+.container .search input {
+  font-size: 1.2em;
+  -webkit-appearance: none;
+  border-radius: 0;
+  padding: 8px;
+  border: 1px solid rgba(200, 200, 200, 0.9);
+  outline: none;
+  font-weight: bold
+}
+.container .search input[type=text] {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border-right: none
+}
+.container .search input[type=button] {
+  background-color: #4285f4;
+  color: white;
+  cursor: pointer;
+  margin-left: -5px
+}
+.container .search input[type=button][disabled] {
+  background-color: gray;
+  cursor: wait
+}
+@media screen and (max-width: 640px) {
+  .container .search {
+    display: block;
+    text-align: center
+  }
+  .container .search input {
+    width: 100%;
+    display: block
+  }
+  .container .search input[type=text] {
+    border: 1px solid #4285f4;
+    margin-bottom: 1em
+  }
+  .container .search input[type=button] {
+    margin-left: 0
+  }
+}
+.container .status {
+  padding-top: 1em;
+  text-align: left
+}
+.container .status .title {
+  cursor: pointer;
+  text-transform: uppercase
+}
+.container .status .title.connecting {
+  color: tomato
+}
+.container .status .title.connecting .reset {
+  display: none
+}
+.container .status .title.connected {
+  color: green
+}
+.container .status .title.connected .reset {
+  padding-left: 1em
+}
+.container .status .title [ng-click]:hover, .container .status .title [ng-click]:active {
+  text-decoration: underline
+}
+.container .status .detail {
+  list-style: none;
+  padding: 0;
+  letter-spacing: .2em;
+  font-family: monospace
+}
+.container .status .detail li {
+  padding-top: 1em;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex
+}
+.container .status .detail li img {
+  display: none
+}
+.container .status .detail li a {
+  text-decoration: none
+}
+.container .status .detail li:before {
+  width: 1.5em;
+  content: "∎"
+}
+.container .status .detail li.fast:before {
+  color: green
+}
+.container .status .detail li.slow:before {
+  color: yellow
+}
+.container .status .detail li.timeout {
+  text-decoration: line-through
+}
+.container .status .detail li.timeout:before {
+  color: gray
+}
+.container .status .detail li span {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1
+}
+.container .status .detail li span:last-of-type {
+  text-align: right
+}
+.container .status .detail li:hover {
+  text-decoration: underline
+}
+.container .status .detail.hide {
+  height: 0;
+  overflow: hidden
+}
+.container .status a:hover {
+  text-decoration: dashed
+}
+footer {
+  background: #f2f2f2;
+  border-top: 1px solid #e4e4e4;
+  line-height: 40px;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  font-family: arial, sans-serif;
+  font-size: small;
+  padding: 0 5em;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex
+}
+@media screen and (max-width: 640px) {
+  footer {
+    display: none
+  }
+}
+footer a {
+  color: darkgrey;
+  text-decoration: none;
+  display: inline-block;
+  width: 33%;
+  text-align: center
+}
+footer a:hover {
+  color: #4285f4
+}
+.test-image {
+  height: 20px
+}
