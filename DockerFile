@@ -1,0 +1,4 @@
+FROM nginx
+MAINTAINER grant liuwei_sj@163.com
+run apt-get install git
+run git clone git@github.com:liuweisj/openGoogle.git /usr/share/nginx/html/google
